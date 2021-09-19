@@ -1,35 +1,192 @@
+<!--<form action="/register/" method="POST"> {% csrf_token %}-->
+<!--    <div class="container mt-3">-->
+<!--        <div class="mb-3">-->
+<!--            <label class="form-label" for="username">Username</label>-->
+<!--            <input class="form-control" id="username" name="username" type="text">-->
+<!--        </div>-->
+<!--        <div class="mb-3">-->
+<!--            <label class="form-label" for="first_name">First Name</label>-->
+<!--            <input class="form-control" id="first_name" name="first_name" type="text">-->
+<!--        </div>-->
+<!--        <div class="mb-3">-->
+<!--            <label class="form-label" for="last_name">Last Name</label>-->
+<!--            <input class="form-control" id="last_name" name="last_name" type="text">-->
+<!--        </div>-->
+<!--        <div class="mb-3">-->
+<!--            <label class="form-label" for="email">Email address</label>-->
+<!--            <input class="form-control" id="email" name="email" type="email">-->
+<!--        </div>-->
+<!--        <div class="mb-3">-->
+<!--            <label class="form-label" for="password1">Password</label>-->
+<!--            <input class="form-control" id="password1" name="password1" type="password">-->
+<!--        </div>-->
+<!--        <div class="mb-3">-->
+<!--            <label class="form-label" for="password2">Confirm Password</label>-->
+<!--            <input class="form-control" id="password2" name="password2" type="password">-->
+<!--        </div>-->
+<!--        <button class="btn btn-primary" type="submit">Submit</button>-->
+<!--    </div>-->
+<!--</form>-->
 
-<form action="/register/" method="POST"> {% csrf_token %}
-    <div class="container mt-3">
-        <div class="mb-3">
-            <label for="username" class="form-label">Username</label>
-            <input type="text" class="form-control" id="username" name="username">
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <title>Rhombus</title>
+        <meta charset="utf-8">
+        <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+
+        <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <!-- <link rel="stylesheet" href="../static/sty_le.css"> -->
+        <link rel="stylesheet" href="../static/style.css">
+    </head>
+
+    <body>
+
+        <div class="wrapper d-flex align-items-stretch">
+            <nav id="sidebar">
+                <div class="p-4 pt-5">
+                    <a class="img logo rounded-circle mb-5" href="#"
+                        style="background-image: url(../static/images/user.png);"></a>
+                    <ul class="list-unstyled components mb-5">
+                        <li>
+                            <a href="/login/">LogIN</a>
+                        </li>
+                        <li class="active">
+                            <a href="#">SignUP</a>
+                        </li>
+                        <li>
+                            <a href="https://wsdc.nitw.ac.in/home/">About</a>
+                        </li>
+                    </ul>
+
+                    <footer style="position: fixed; bottom:2em">Copyright by WSDC</footer>
+
+                </div>
+            </nav>
+
+            <!-- Page Content  -->
+            <div class="p-4 p-md-5" id="content">
+
+                <nav class="navbar navbar-expand-sm navbar-light bg-light">
+                    <div class="container-fluid">
+
+                        <button class="btn btn-primary" id="sidebarCollapse" type="button">
+                            <i class="fa fa-bars"></i>
+                            <span class="sr-only">Toggle Menu</span>
+                        </button>
+                        <h2 class="title" style="margin: 0 1em;">Register</h2>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="nav navbar-nav ml-auto">
+                                <li class="nav-item">
+                                    <a class="nav-link" onclick="loadabout()">About</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" onclick="loadcontacts()">Contacts</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+                <h2 class="text" style="height:fit-content;width:fit-content;"></h2>
+                <main class="page-content">
+
+                    <!-- <div class="main-body"> -->
+
+                    <!-- Delete excess data elements / pic if not in database -->
+
+                    <div class="col-md-4 float-right">
+                        <form action="/action_page.php">
+                            <img class="rounded  mx-auto d-block img-thumbnail" src="../static/script.js">
+                            <label for="img">Upload your image:</label>
+                            <input accept="image/*" id="img" name="img" type="file">
+                            <input type="submit">
+                        </form>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <div class="row">
+                                <input class="col-md-6" name="First-name" placeholder="First name" required type="text">
+                                <input class="col-md-6" name="Last-name" placeholder="Last name" required type="text">
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <input class="col-md-12" name="Roll-Number" placeholder="Roll Number" required
+                                    type="text">
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <input class="col-md-12" name="Registration-Number" placeholder="Registration Number"
+                                    required type="text">
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <input class="col-md-12" name="Date-Of-Birth" placeholder="Date Of Birth" required
+                                    type="text">
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <input class="col-md-12" name="Contact-Number" placeholder="Contact Number" required
+                                    type="text">
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <input class="col-md-12" name="Email" placeholder="Email" required type="text">
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <input class="col-md-12" name="Email" placeholder="Email" required type="text">
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <input class="col-md-12" name="Gender" placeholder="Gender" required type="text">
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <input class="col-md-12" name="Address" placeholder="Address" required type="text">
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <input class="col-md-12" name="admission" placeholder="admission category" required
+                                    type="text">
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <input class="col-md-12" name="Course" placeholder="Course" required type="text">
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <input class="col-md-6" name="branch" placeholder="branch" required type="text">
+                                <input class="col-md-6" name="Section" placeholder="Section" required type="text">
+                            </div>
+                            <hr>
+
+
+                            <!-- Register button -->
+
+                            <div class="row">
+                                <a class="btn btn-info col-md-12" href="#"
+                                    style="background-color: #f8B739;border-color:#f8B739;"
+                                    target="__blank">Register</a>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </div>
         </div>
-        <div class="mb-3">
-            <label for="first_nam" class="form-label">First Name</label>
-            <input type="text" class="form-control" id="first_name" name="first_name">
-        </div>
-        <div class="mb-3">
-            <label for="last_name" class="form-label">Last Name</label>
-            <input type="text" class="form-control" id="last_name" name="last_name">
-        </div>
-        <div class="mb-3">
-            <label for="email" class="form-label">Email address</label>
-            <input type="email" class="form-control" id="email" name="email">
-        </div>
-        <div class="mb-3">
-            <label for="password1" class="form-label">Password</label>
-            <input type="password" class="form-control" id="password1" name="password1">
-        </div>
-        <div class="mb-3">
-            <label for="password2" class="form-label">Confirm Password</label>
-            <input type="password" class="form-control" id="password2" name="password2">
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </div>
-</form>
-        
-        
-        
-        
-    
+        <script src="../static/jquery.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+            crossorigin="anonymous"></script>
+        <script src="../static/main.js"></script>
+        <script src="../static/script.js"></script>
+    </body>
+
+</html>
