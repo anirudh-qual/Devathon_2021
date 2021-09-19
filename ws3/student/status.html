@@ -1,0 +1,14 @@
+{% extends 'student\base.html' %}
+
+
+{% block main %}
+{% for app in application %}
+<div class="container w-50 mt-4 shadow">
+    <h3>Your application for {{app.scholarship.name}} is {{app.Application_Status}}</h3>
+    <br>
+    <h5>{{application.message}}</h5>
+    <br>
+    
+</div>
+{% endfor %}
+{%endblock%}
