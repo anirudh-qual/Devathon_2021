@@ -1,4 +1,4 @@
-
+<!-- 
 <form action="/login/" method="POST"> {% csrf_token %}
     <div class="container mt-5">
     <div class="mb-3">
@@ -13,4 +13,139 @@
     <button type="submit" class="btn btn-primary">Submit</button>
   </div>
   </form>
-  <a href="/register/">Register</a>
+  <a href="/register/">Register</a> -->
+
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <title>Scholarship Portal</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../static/sty_le.css">
+    <link rel="stylesheet" href="../static/style.css">
+  </head>
+
+  <body>
+
+
+    <!-- sidebar -->
+
+    <div class="wrapper d-flex align-items-stretch">
+      <nav id="sidebar">
+        <div class="p-4 pt-5">
+          <a href="#" class="img logo rounded-circle mb-5" style="background-image: url(\images\\user.png);"></a>
+          <ul class="list-unstyled components mb-5">
+            <li class="active">
+              <a href="/login/">LogIN</a>
+            </li>
+            <li>
+              <a href="/register/">SignUP</a>
+            </li>
+            <li>
+              <a href="https://wsdc.nitw.ac.in/home/">About</a>
+            </li>
+          </ul>
+
+          <footer style="position: fixed; bottom:2em">Copyright by WSDC</footer>
+
+        </div>
+      </nav>
+
+      <!-- Page Content  -->
+      <div id="content" class="p-4 p-md-5">
+
+        <!-- topbar -->
+        <nav class="navbar navbar-expand-sm navbar-light bg-light">
+          <div class="container-fluid">
+
+            <button type="button" id="sidebarCollapse" class="btn btn-primary">
+              <i class="fa fa-bars"></i>
+              <span class="sr-only">Toggle Menu</span>
+            </button>
+            <h2 class="title" style="margin: 0 1em;"></h2>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="nav navbar-nav ml-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="about.html">About</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="about.html">Contact</a>
+                </li>
+              </ul>
+              <!-- </div> -->
+            </div>
+        </nav>
+        <h2 class="text" style="height:fit-content;width:fit-content;"></h2>
+        <!-- <main class="page-content"> -->
+
+
+        <!-- login elements -->
+        <div class="col-md-12 align-items-center">
+          <form action="/login/" method="POST"> {% csrf_token %}
+            <div class="d-flex align-items-center" style="padding: 0% calc(50% - 9em);">
+              <i class="fa fa-book fa-2x me-3" style="color: #F8B969;"></i>
+              <span class="h1 fw-bold mb-0" style="margin-left:.3em">Scholarship&nbsp;Portal</span>
+            </div>
+
+            <h5 class="fw-normal" style="letter-spacing: 1px;">Sign into your account</h5>
+            <!-- 
+            <div class="form-outline mb-12">
+              <input type="email" class="form-control form-control-lg" />
+              <label class="form-label">Email address</label>
+            </div> -->
+
+            <!-- <div class="form-outline mb-4">
+              <label class="form-label" for="form2Example27">Password</label>
+              <input type="password" id="form2Example27" class="form-control form-control-lg" />
+            </div> -->
+
+            <div class="form-outline mb-12">
+              <label for="username" class="form-label">Username</label>
+              <input type="text" class="form-control form-control-lg" id="username" name="username">
+            </div>
+
+            <div class="form-outline mb-4">
+              <label for="password" class="form-label">Password</label>
+              <input type="password" class="form-control form-control-lg" id="password" name="password">
+            </div>
+
+            <br>
+            <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
+
+            <!-- login button -->
+
+            <div class="pt-1 mb-4">
+              <button class="btn btn-dark btn-lg btn-block" type="submit">Login</button>
+            </div>
+
+            <p class="mb-5 pb-lg-2">Don't have an account? <a href="/register/" style="color: #393f81;">Register
+                here</a></p>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- </main> -->
+
+    <!-- end login -->
+    </div>
+    </div>
+
+    <script src="../static/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"></script>
+    <script src="../static/main.js"></script>
+    <script src="../static/script.js"></script>
+
+  </body>
+
+</html>
