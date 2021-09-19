@@ -34,16 +34,21 @@ def application_form(request,id):
     return render(request,"student\\application_form.html")
 
 def create_user(request):
-    if request.method=="POST":
-        form = StudentForm(request.POST, request.FILES)
-        if form.is_valid():
-            student = form.save()
-            
-            student.save()
-            return redirect("/home")
-    else:
-        form=StudentForm()
-    return render(request, "student\\profile_form.html", { 'form':form})
+    try:
+        student=student=Student.objects.get(user=request.user)
+        return HttpResponse("<html><body>Profile Already Created.</body></html>" )
+    except:
+
+        if request.method=="POST":
+            form = StudentForm(request.POST, request.FILES)
+            if form.is_valid():
+                student = form.save()
+                
+                student.save()
+                return redirect("/home")
+        else:
+            form=StudentForm()
+        return render(request, "student\\profile_form.html", { 'form':form})
 
 
 
@@ -107,10 +112,12 @@ def loggedout(request):
 def status(request):
     if not request.user.is_authenticated:
         return redirect("/login")
-    
-    student=Student.objects.get(user=request.user)
-    application = Application.objects.filter(user=student) 
-    return render(request, "student\\status.html", {'application':application})
+    try:
+        student=Student.objects.get(user=request.user)
+        application = Application.objects.filter(user=student) 
+        return render(request, "student\\status.html", {'application':application})
+    except:
+        return redirect("/update")
 
 def elgibility(student,scholarship):
     if student.caste not in scholarship.caste:
